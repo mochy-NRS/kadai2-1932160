@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R193260 レポート</title>
+  <style>
+    span{
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  PCの画面に大きく表示されるように<span>widthを1663にheightを800</span>に変更した。
+  <br>
+  <br>
+  widthとheightを大きくしたため、オブジェクトが小さく見えてしまうため,<span>視野角を50</span>にして、見やすいようにした。
+  <br>
+  <br>
+  今回は、<span>箱の中にドーナツがあって、ドーナツの中と両脇に球がある</span>ようにしたい。<br>
+  なので、箱(geometry)の大きさを<span>(5, 5, 5)</span>にした。<br>
+  箱の材質(material)は他のオブジェクトを見やすくするため、<span>#6699ff</span>にして薄くした。<br>
+  位置(position)を<span>z方向に-10</span>移動させた。
+  <br>
+  <br>
+  ドーナツ(torusGeometry)の<span>半径を1、太さを0.2、チューブ方向の分割数を12、水平方向の分割数を20</span>にして、より丸く見えるようにした。<br>
+  ドーナツの材質(torusMaterial)は、そのまま#0000ffで目立つようにした。<br>
+  位置(position)は<span>z方向に-5</span>移動させた。
+  <br>
+  <br>
+  球(sphereGeometry)の<span>半径を0.7</span>にしてドーナツと丁度いい大きさに調節した。また、<span>垂直方向の分割数と水平方向の分割数を50</span>にして、細かくした。<br>
+  球の材質(sphereMaterial)は箱とドーナツと差別化を図るため<span>#ff0000</span>にして、<span>(wireframe:true)</span>でワイヤーフレームを表示した。<br>
+  位置(position)は、ドーナツで覆われるようにするため、ドーナツと同じ位置にした。また、両脇の球は<span>x方向にそれぞれ3.1,-3.1</span>に移動させた。<br><br>
+
+  ライトを2つ、<span>平行光源(directionalLight)とスポットライト(spotLight)</span>を置いた。<br>
+  平行光源は、位置(positon)を<span>(1, 6, 1)</span>にしてy軸を大きくして、
+  スポットライトは、位置(position)を<span>(1,1,3)</span>にして、z軸を大きくして見やすくした。<br><br>
+
+
+  箱の回転(rotation)は<span>y軸中心で回転量を0.01</span>にした。<br>
+  それに対し、ドーナツは<span>x軸中心にして、回転量を0.02</span>にした。<br>
+  球の真ん中は、<span>y軸中心に箱と同じ回転量</span>にして、両脇の球は<span>x軸中心に回転量を0.02</span>にして<span>y軸中心に回転量を0.03</span>にした。<br><br>
+
+  少し箱に対してドーナツが小さく感じたので、ドーナツを<span>全方向に1.2拡大</span>した。<br>
+</body>
+</html>
